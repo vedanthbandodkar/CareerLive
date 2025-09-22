@@ -191,6 +191,17 @@ export default function AddSectionModal({ isOpen, onClose, onAdd }: AddSectionMo
             </p>
           </div>
 
+          {/* Submit Button */}
+          <div>
+            <button
+              type="submit"
+              disabled={!formData.type || !formData.title.trim() || !formData.description.trim()}
+              className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+            >
+              Add Section
+            </button>
+          </div>
+
           {/* Actions */}
           <div className="flex space-x-3 pt-4">
             <button
