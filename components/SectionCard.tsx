@@ -1,6 +1,6 @@
 "use client";
 
-import { Trash2, Calendar, DivideIcon as LucideIcon } from 'lucide-react';
+import { Trash2, Calendar, ExternalLink, type LucideIcon } from 'lucide-react';
 import { Section } from '@/app/student/page';
 
 interface SectionCardProps {
@@ -75,6 +75,20 @@ export default function SectionCard({
               {tag.trim()}
             </span>
           ))}
+        </div>
+      )}
+
+      {section.link && (
+        <div className="mt-4">
+          <a
+            href={section.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+          >
+            <ExternalLink className="w-4 h-4" />
+            <span>View Link</span>
+          </a>
         </div>
       )}
 

@@ -12,6 +12,7 @@ export interface Section {
   title: string;
   description: string;
   tags: string[];
+  link?: string;
   createdAt: string;
 }
 

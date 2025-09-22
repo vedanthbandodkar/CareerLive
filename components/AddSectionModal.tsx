@@ -23,6 +23,7 @@ export default function AddSectionModal({ isOpen, onClose, onAdd }: AddSectionMo
     title: '',
     description: '',
     tags: '',
+    link: '',
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -43,6 +44,7 @@ export default function AddSectionModal({ isOpen, onClose, onAdd }: AddSectionMo
       title: formData.title.trim(),
       description: formData.description.trim(),
       tags,
+      link: formData.link.trim() || undefined,
     });
 
     // Reset form
@@ -51,6 +53,7 @@ export default function AddSectionModal({ isOpen, onClose, onAdd }: AddSectionMo
       title: '',
       description: '',
       tags: '',
+      link: '',
     });
     setIsDropdownOpen(false);
   };
@@ -61,6 +64,7 @@ export default function AddSectionModal({ isOpen, onClose, onAdd }: AddSectionMo
       title: '',
       description: '',
       tags: '',
+      link: '',
     });
     setIsDropdownOpen(false);
     onClose();
@@ -166,6 +170,24 @@ export default function AddSectionModal({ isOpen, onClose, onAdd }: AddSectionMo
             />
             <p className="text-xs text-gray-500 mt-1">
               Separate multiple tags with commas
+            </p>
+          </div>
+
+          {/* Link */}
+          <div>
+            <label htmlFor="link" className="block text-sm font-medium text-gray-700 mb-2">
+              Link (Optional)
+            </label>
+            <input
+              type="url"
+              id="link"
+              value={formData.link}
+              onChange={(e) => setFormData(prev => ({ ...prev, link: e.target.value }))}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="https://example.com"
+            />
+            <p className="text-xs text-gray-500 mt-1">
+              Add a relevant link (project demo, certificate, etc.)
             </p>
           </div>
 
