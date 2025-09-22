@@ -1,11 +1,11 @@
 "use client";
 
-import { DivideIcon as LucideIcon, Trash2, Calendar } from 'lucide-react';
+import { Trash2, Calendar, LucideIcon } from 'lucide-react';
 import { Section } from '@/app/student/page';
 
 interface SectionCardProps {
   section: Section;
-  icon: LucideIcon;
+  icon: typeof LucideIcon;
   onDelete?: (id: string) => void;
   isRecruiterView?: boolean;
 }
