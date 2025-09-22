@@ -1,6 +1,6 @@
 "use client";
 
-import { Trash2, Calendar, LucideIcon } from 'lucide-react';
+import { Trash2, Calendar, DivideIcon as LucideIcon } from 'lucide-react';
 import { Section } from '@/app/student/page';
 
 interface SectionCardProps {
